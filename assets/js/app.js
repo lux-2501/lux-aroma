@@ -48,12 +48,14 @@
     return toast;
   }
 
-  function announce(message) {
+  function announce(message, options = {}) {
+    const { showToast = true } = options;
+
     if (elements.liveStatus) {
       elements.liveStatus.textContent = message;
     }
 
-    if (!message) {
+    if (!message || !showToast) {
       return;
     }
 
@@ -536,7 +538,7 @@
     saveState();
 
     if (announceSwitch) {
-      announce(`已切换到 ${formulas[activeIndex].nm}。`);
+      announce(`已切换到 ${formulas[activeIndex].nm}。`, { showToast: false });
     }
   }
 
@@ -722,6 +724,12 @@
       return;
     }
 
+    const interactiveRoot = event.target.closest("button, a, input, textarea, select, .stp, .imprint");
+    if (interactiveRoot) {
+      touchInProgress = false;
+      return;
+    }
+
     touchStartX = event.touches[0].clientX;
     touchStartY = event.touches[0].clientY;
     touchInProgress = true;
@@ -738,7 +746,7 @@
     const dx = endX - touchStartX;
     const dy = endY - touchStartY;
 
-    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.25) {
+    if (Math.abs(dx) < 64 || Math.abs(dx) < Math.abs(dy) * 1.4) {
       return;
     }
 
