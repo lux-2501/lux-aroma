@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta
+    name="description"
+    content="芳序，一页式精油配伍网站。七则配方，分别安放清晨、午后、夜深，以及人从纷乱里退回自身的路径。"
+  />
+  <meta name="theme-color" content="#f1ebdd" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="芳序" />
+  <meta property="og:description" content="七则精油配伍，适合被阅读，也适合被分享。" />
+  <title>芳序</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <p class="masthead-eyebrow">薰衣草 · 甜橙 · 天竺葵 · 北非雪松</p>
+      <h1 class="masthead-title">芳序</h1>
+      <div class="masthead-sub">
+        <p>气味不劝说人。</p>
+        <p>它只是先落进空气，像薄光停在器物表面。</p>
+        <p>七则配伍，分别安放清晨、午后、夜深，以及人从纷乱里退回自身的路径。</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <nav class="index" id="idx" aria-label="配方索引" role="tablist"></nav>
+      <section class="card-shell" id="card-region">
+        <div id="card"></div>
+      </section>
+    </div>
+
+    <footer class="colophon">
+      <p>一滴 ≈ 0.05 毫升。用量随器具与室内容积浮动。</p>
+    </footer>
+  </main>
+
+  <span class="sr-only" role="status" aria-live="polite" id="live-status"></span>
+</body>
+</html>
